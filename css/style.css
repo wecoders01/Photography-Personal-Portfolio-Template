@@ -119,6 +119,35 @@ Keyframes
 	}
 }
 /*******************
+Preloader
+*************************************/
+.preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	background-color: #111111;
+	z-index: 1099;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.6s ease;
+}
+.preloader.loaded {
+	visibility: hidden;
+	opacity: 0;
+	z-index: -99;
+}
+.preloader .loader {
+	height: 30px;
+	width: 30px;
+	border: 2px solid #ff9800;
+	border-radius: 50%;
+	border-right: 2px solid transparent;
+	animation: spin 2s linear infinite;
+}
+/*******************
 Header Section
 *************************************/
 .header {
@@ -128,6 +157,11 @@ Header Section
 	width: 100%;
 	background-color: transparent;
 	z-index: 99;
+	transition: all 0.5s ease;
+}
+.header.fixed {
+	background-color: #ffffff;
+	position: fixed;
 }
 .header .brand-name {
 	padding: 0 15px;
@@ -140,9 +174,58 @@ Header Section
 	letter-spacing: 2px;
 	transition: all 0.5s ease;
 }
+.header.fixed .brand-name a {
+	color: #000000;
+}
+.header.fixed .nav ul li a:hover,
 .header .nav ul li a:hover,
 .header .brand-name a:hover {
 	color: #ff9800;
+}
+.header .nav-toggle {
+	width: 40px;
+	height: 34px;
+	border: 1px solid #ffffff;
+	border-radius: 3px;
+	cursor: pointer;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	transition: all 0.5s ease;
+	display: none;
+}
+.header.fixed .nav-toggle {
+	border-color: #000000;
+}
+.header .nav-toggle span {
+	height: 1px;
+	display: block;
+	width: 16px;
+	background-color: #ffffff;
+	position: relative;
+	transition: all 0.5s ease;
+}
+.header .nav-toggle span::after,
+.header .nav-toggle span::before {
+	content: "";
+	position: absolute;
+	left: 0;
+	top: 0;
+	height: 1px;
+	width: 100%;
+	background-color: #ffffff;
+	transition: all 0.5s ease;
+}
+.header.fixed .nav-toggle span,
+.header.fixed .nav-toggle span::after,
+.header.fixed .nav-toggle span::before {
+	background-color: #000000;
+}
+.header .nav-toggle span::before {
+	transform: translateY(-6px);
+}
+.header .nav-toggle span::after {
+	transform: translateY(6px);
 }
 .header .nav {
 	padding: 0 15px;
@@ -159,6 +242,9 @@ Header Section
 	display: block;
 	transition: all 0.3s ease;
 	text-transform: capitalize;
+}
+.header.fixed .nav ul li a {
+	color: #000000;
 }
 /*******************
 Home Section
@@ -300,8 +386,7 @@ Service Section
 .service-section .service-item {
 	flex: 0 0 33.33%;
 	max-width: 33.33%;
-	padding: 0 15px;
-	margin-bottom: 30px;
+	padding: 15px;
 }
 .service-section .service-item .service-item-inner {
 	position: relative;
@@ -352,8 +437,7 @@ Work Section
 .work-section .work-item {
 	flex: 0 0 33.33%;
 	max-width: 33.33%;
-	padding: 0 15px;
-	margin-bottom: 30px;
+	padding: 15px;
 }
 .work-section .work-item-inner {
 	position: relative;
@@ -493,7 +577,7 @@ Light Box
 Contact Section
 *************************************/
 .contact-section {
-	padding: 50px 0 80px;
+	padding: 80px 0 80px;
 }
 .contact-section .contact-img {
 	flex: 0 0 100%;
@@ -621,6 +705,81 @@ Copyright Section
 	color: #555555;
 	font-size: 16px;
 }
+
 /*******************
-Global CSS
+Responsive
 *************************************/
+@media (min-width: 768px) {
+	.header .nav {
+		display: block !important;
+	}
+}
+@media (max-width: 767px) {
+	.header {
+		padding: 7px 0;
+		position: fixed;
+	}
+	.header .nav-toggle {
+		display: flex;
+		margin-right: 15px;
+	}
+	.header .nav {
+		flex: 0 0 100%;
+		max-width: 100%;
+		background-color: #ffffff;
+		padding: 0;
+		display: none;
+	}
+	.header.fixed .nav {
+		border-top: 1px solid #cccccc;
+	}
+	.header .nav ul li {
+		display: block;
+		margin-right: 25px;
+	}
+	.header.fixed .nav ul li a,
+	.header .nav ul li a {
+		color: #000000;
+		padding: 15px 0;
+	}
+	.home-section .home-content h1 {
+		font-size: 40px;
+	}
+	.about-section .about-img {
+		margin-bottom: 30px;
+	}
+	.about-section .about-content,
+	.about-section .about-img {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	.work-section .work-item,
+	.service-section .service-item {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+}
+@media (max-width: 575px) {
+	.home-section .home-content h1 {
+		font-size: 25px;
+		letter-spacing: 5px;
+	}
+	.about-section .about-content .stats .stat-box {
+		flex: 0 0 50%;
+		max-width: 50%;
+	}
+	.contact-section .contact-info .info-item,
+	.contact-section .contact-form .form .input-group.left,
+	.contact-section .contact-form .form .input-group.right,
+	.work-section .work-item,
+	.service-section .service-item {
+		flex: 0 0 100%;
+		max-width: 100%;
+	}
+	.contact-section .contact-form {
+		padding: 0 35px;
+	}
+	.contact-section .contact-form .form {
+		padding: 55px 5px;
+	}
+}

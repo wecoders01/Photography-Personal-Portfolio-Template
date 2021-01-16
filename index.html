@@ -13,6 +13,11 @@
 		<link rel="stylesheet" href="css/style.css" />
 	</head>
 	<body>
+		<!-- Preloader Start-->
+		<div class="preloader">
+			<div class="loader"></div>
+		</div>
+		<!-- Preloader End -->
 		<!-- Header Start -->
 		<header class="header">
 			<div class="container">
@@ -20,13 +25,16 @@
 					<div class="brand-name">
 						<a href="index.html">Tanvir.</a>
 					</div>
+					<div class="nav-toggle">
+						<span></span>
+					</div>
 					<nav class="nav">
 						<ul>
-							<li><a href="#">Home</a></li>
-							<li><a href="#">about</a></li>
-							<li><a href="#">services</a></li>
-							<li><a href="#">works</a></li>
-							<li><a href="#">contact</a></li>
+							<li><a href="#home">Home</a></li>
+							<li><a href="#about">about</a></li>
+							<li><a href="#services">services</a></li>
+							<li><a href="#works">works</a></li>
+							<li><a href="#contact">contact</a></li>
 						</ul>
 					</nav>
 				</div>
@@ -34,7 +42,7 @@
 		</header>
 		<!-- Header End -->
 		<!-- Home Section Start -->
-		<section class="home-section">
+		<section class="home-section" id="home">
 			<!-- shape -->
 			<div class="shape-01"></div>
 			<div class="container">
@@ -46,14 +54,14 @@
 				</div>
 			</div>
 			<!-- scroll btn -->
-			<a href="#" class="scroll-down">
+			<a href="#about" class="scroll-down">
 				<img src="img/icons/arrow-down.svg" alt="Scroll Down" />
 			</a>
 		</section>
 		<!-- Home Section End -->
 
 		<!-- About Section Start -->
-		<section class="about-section">
+		<section class="about-section" id="about">
 			<div class="container">
 				<div class="row">
 					<div class="about-img">
@@ -98,7 +106,7 @@
 							</div>
 						</div>
 						<!-- contact btn -->
-						<a href="#" class="btn btn-01">contact me</a>
+						<a href="#contact" class="btn btn-01">contact me</a>
 					</div>
 				</div>
 			</div>
@@ -106,7 +114,7 @@
 		<!-- About Section End -->
 
 		<!-- Service Section Start -->
-		<section class="service-section">
+		<section class="service-section" id="services">
 			<div class="container">
 				<div class="row">
 					<div class="section-title">
@@ -180,7 +188,7 @@
 		<!-- Service Section End -->
 
 		<!-- Work Section Start -->
-		<section class="work-section">
+		<section class="work-section" id="works">
 			<div class="container">
 				<div class="row">
 					<div class="section-title">
@@ -277,29 +285,8 @@
 		</section>
 		<!-- Work Section End -->
 
-		<!-- LightBox Start -->
-		<div class="lightbox">
-			<div class="img-box">
-				<div class="lightbox-close">&times;</div>
-				<img src="img/works/large/2.jpg" class="lightbox-img" alt="img" />
-				<div class="lightbox-caption">
-					<div class="lightbox-category"></div>
-					<div class="lightbox-counter"></div>
-				</div>
-				<div class="lightbox-controls">
-					<div class="prev">
-						<img src="img/icons/prev.svg" alt="Prev" />
-					</div>
-					<div class="next">
-						<img src="img/icons/next.svg" alt="Next" />
-					</div>
-				</div>
-			</div>
-		</div>
-		<!-- LightBox End -->
-
 		<!-- Contact Section Start -->
-		<section class="contact-section">
+		<section class="contact-section" id="contact">
 			<div class="container">
 				<div class="row">
 					<div class="contact-img">
@@ -397,6 +384,27 @@
 		<!-- Copyright Text -->
 		<p class="copyright">&copy;2021 WEcoders.</p>
 		<!-- Copyright Text -->
+
+		<!-- LightBox Start -->
+		<div class="lightbox">
+			<div class="img-box">
+				<div class="lightbox-close">&times;</div>
+				<img src="img/works/large/2.jpg" class="lightbox-img" alt="img" />
+				<div class="lightbox-caption">
+					<div class="lightbox-category"></div>
+					<div class="lightbox-counter"></div>
+				</div>
+				<div class="lightbox-controls">
+					<div class="prev">
+						<img src="img/icons/prev.svg" alt="Prev" />
+					</div>
+					<div class="next">
+						<img src="img/icons/next.svg" alt="Next" />
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- LightBox End -->
 
 		<!-- Js -->
 		<script src="js/jquery.min.js"></script>
